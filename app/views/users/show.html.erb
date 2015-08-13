@@ -15,6 +15,7 @@
           <li class="list-group-item">
             <%= favorite.dish.name %> at <%= favorite.venue.name %>
           </li>
+          <% end %>
 
           <li class="list-group-item">
             <form action="/create_favorite" method="post">
@@ -22,13 +23,7 @@
               <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
               <!-- Label and input for user_id -->
-              <div class="form-group">
-                <label for="user_id" class="control-label">
-                  User
-                </label>
-
-                <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :username, @favorite.user_id), :class => "form-control") %>
-              </div>
+              <input name="user_id" type="hidden" value="<%= @user.id %>">
 
               <!-- Label and input for dish_id -->
               <div class="form-group">
@@ -61,7 +56,6 @@
               </button>
             </form>
           </li>
-          <% end %>
         </ul>
       </dd>
     </dl>
