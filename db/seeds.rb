@@ -127,6 +127,8 @@ usernames = ["alice", "bob", "carol", "eve"]
 usernames.each do |username|
   user = User.new
   user.username = username
+  user.email = "#{username}@example.com"
+  user.password = "12345678"
   user.save
 end
 

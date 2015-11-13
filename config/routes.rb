@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get "/", :controller => "dishes", :action => "index"
+  devise_for :users
+  root "dishes#index"
 
   # Routes for the Favorite resource:
   # CREATE
