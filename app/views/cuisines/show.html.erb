@@ -22,7 +22,9 @@
     </li>
     <% @cuisine.dishes.each do |dish| %>
     <li class="list-group-item">
-      <%= dish.name %>
+      <a href="/dishes/<%= dish.id %>">
+        <%= dish.name %>
+      </a>
     </li>
     <% end %>
 

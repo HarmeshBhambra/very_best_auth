@@ -22,7 +22,13 @@
     </li>
     <% @user.favorites.each do |favorite| %>
     <li class="list-group-item">
-      <%= favorite.dish.name %> at <%= favorite.venue.name %>
+      <a href="/dishes/<%= favorite.dish.id %>">
+        <%= favorite.dish.name %>
+      </a>
+      at
+      <a href="/venues/<%= favorite.venue.id %>">
+        <%= favorite.venue.name %>
+      </a>
     </li>
     <% end %>
 
