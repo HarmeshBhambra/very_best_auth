@@ -22,6 +22,9 @@
   </div>
 
   <ul class="list-group">
+    <li class="list-group-item list-group-item-success">
+      Favorites
+    </li>
     <% @venue.favorites.each do |favorite| %>
     <li class="list-group-item">
       <a href="/dishes/<%= favorite.dish.id %>">
